@@ -1,10 +1,10 @@
 import { PocketBaseProvider } from '../contexts/PocketBaseContext';
+import type { AppProps } from 'next/app';
+import type { ReactNode } from 'react';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <PocketBaseProvider>
-            <Component {...pageProps} />
-        </PocketBaseProvider>
+        <PocketBaseProvider children={<Component {...pageProps} />} />
     );
 }
 
